@@ -1,0 +1,31 @@
+<view class="weather">
+    <view class='weather-bg'></view>
+    <view class='wea-haeder'>
+        <text class='city'>城市：{{curWeather.currentCity || '定位中'}}</text>
+        <text class='date'>{{curWeather.updateTimeFormat}} 更新</text>
+    </view>
+    <view class='today' wx:if='{{curWeather.temperature}}'>
+        <view class='temp'>{{curWeather.temperature}}<text class='dot'></text></view>
+        <view class='desc'>{{curWeather.weatherDesc}}</view>
+        <view class='pm25'>{{curWeather.pm25.desc + ' ' +curWeather.pm25.val}}</view>
+    </view>
+    <view class='many'>
+        <view class='many-item' wx:for='{{listWeather.results[0].weather_data}}' wx:key='{{index}}'>
+            <view class='date'>{{index === 0 ? '今天' : item.date}}</view>
+            <view class='temperature'>{{item.temperature}}</view>
+            <!-- <image class='i' src='{{item.dayPictureUrl}}' mode='widthFix'></image> -->
+            <!-- <image class='i' src='{{item.nightPictureUrl}}' mode='widthFix'></image> -->
+            <view class='desc'>{{item.weather}}</view>
+            <view class='wind'>{{item.wind}}</view>
+        </view>
+    </view>
+    <view class='live' wx:if='{{listWeather.results[0].index}}'>
+      <view class='live-item' wx:for='{{listWeather.results[0].index}}' wx:key='{{index}}'>
+        <image class='live-icon' src='{{icons[index]}}'></image>
+        <view class='right'>
+          <view class='key'>{{item.tipt}} {{item.zs}}</view>
+          <view class='value'>{{item.des}}</view>
+        </view>
+      </view>
+    </view>
+</view>
