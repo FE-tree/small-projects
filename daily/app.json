@@ -2,7 +2,8 @@
     "pages": [
         "pages/weather/weather",
         "pages/index/index",
-        "pages/logs/logs"
+        "pages/logs/logs",
+        "pages/calendar/calendar"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -21,6 +22,12 @@
                 "selectedIconPath": "images/tab/weather-sl.png",
                 "pagePath": "pages/weather/weather",
                 "text": "天气"
+            },
+            {
+                "iconPath": "images/tab/calendar.png",
+                "selectedIconPath": "images/tab/calendar-sl.png",
+                "pagePath": "pages/calendar/calendar",
+                "text": "日历"
             },
             {
                 "iconPath": "images/tab/home.png",
