@@ -1,0 +1,5 @@
+/* page/interface/pages/facial2/facial2.wxss */
+
+video {
+  width: 100%;
+}

@@ -1,0 +1,34 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container">
+  <template is="head" data="{{title: 'audio'}}"/>
+
+  <view class="page-body">
+    <view class="page-section page-section-gap" style="text-align: center;">
+      <audio style="text-align: left" src="{{current.src}}" poster="{{current.poster}}" name="{{current.name}}" author="{{current.author}}" action="{{audioAction}}" controls></audio>
+    </view>
+
+    <view class="page-section page-section-gap" style="text-align: center;position: relative;">
+      	<audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop bindtimeupdate="timeUpdate"></audio>
+      	<image class="{{action==true ? 'musicImg on' : 'musicImg'}}" src="{{action==true ? '../../resources/pic/musicon.png' : '../../resources/pic/musicoff.png'}}" bindtap="isPlay" />
+
+      	<view>
+      		<view>{{time}}</view>
+			<view class="progress-box">
+		        <progress percent="{{progress}}" color="#10AEFF" stroke-width="3" />
+		    </view>
+      	</view>
+      	
+	    <view class="btn-group">
+			<button class="mini-btn" type="primary" size="mini" bindtap="audioPlay">播放</button>
+			<button class="mini-btn" type="primary" size="mini" bindtap="audioPause">暂停</button>
+			<button class="mini-btn" type="primary" size="mini" bindtap="audio30">设置当前播放时间为30秒</button>
+			<button class="mini-btn" type="primary" size="mini" bindtap="audioStart">回到开头</button>
+		</view>
+    </view>
+    
+  </view>
+
+  <template is="foot" />
+</view>

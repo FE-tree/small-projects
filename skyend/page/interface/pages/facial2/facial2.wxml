@@ -1,0 +1,7 @@
+<!--page/interface/pages/facial2/facial2.wxml-->
+<view class="container">
+    <camera device-position="back" flash="off" binderror="error" id="myCamera" style="width: 100%; height: 300px;"></camera>
+	  <button type="primary" bindtap="recordVideo">{{ record ? '结束录像' : '开始录像' }}</button>
+    <video poster="{{video.tempThumbPath}}" src="{{video.tempVideoPath}}"></video>
+    <button type="primary" bindtap="facial">识别</button>
+</view>

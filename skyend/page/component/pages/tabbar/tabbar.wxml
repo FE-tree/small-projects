@@ -1,0 +1,10 @@
+
+<view class="swiper-tab">
+    <view wx:for="{{tabNav}}" class="swiper-tab-list {{currentTab==index ? 'on' : ''}}" data-current="{{index}}" bindtap="swichNav">{{item}}</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 36}}px" bindchange="bindChange">
+    <swiper-item wx:for="{{tabContent}}">
+      <view class="text" style="background-color: {{item.color}}">{{item.text}}</view>
+    </swiper-item>
+</swiper>

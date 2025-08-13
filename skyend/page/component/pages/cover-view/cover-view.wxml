@@ -1,0 +1,24 @@
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+<view class="container">
+    <template is="head" data="{{title: 'cover-view'}}" />
+
+    <view class="page-body">
+        <view class="page-section">
+        	<cover-view class="controls">
+        		<cover-view>
+					<cover-image class="img" src="../../resources/pic/pause.png" />
+				</cover-view>
+        	</cover-view>
+            <view class="page-section-spacing">
+                <view class="flex-wrp" style="flex-direction:row;">
+                    <view class="flex-item demo-text-1"></view>
+                    <view class="flex-item demo-text-2"></view>
+                    <view class="flex-item demo-text-3"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <template is="foot" />
+</view>

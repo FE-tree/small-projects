@@ -1,0 +1,12 @@
+<!--page/component/pages/sign/sign.wxml-->
+<view class="container">
+  <canvas class="sign" canvas-id="sign" bindtouchmove="move" bindtouchstart="start" bindtouchend="end" bindtouchcancel="cancel" bindlongtap="tap" disable-scroll="true" binderror="error">
+</canvas>
+  <view class="btn-group">
+    <button class="submit" bindtap="clearClick">清除</button>
+    <button class="submit" bindtap="saveClick">提交</button>
+  </view>
+  <image class="signImage" src="{{signImage}}" mode="widthFix"></image>
+</view>
+
+

@@ -1,0 +1,16 @@
+/**danmu.wxss**/
+
+.btn {
+    width: 80%;
+    margin: 30rpx auto;
+}
+
+.input {
+    width: 80%;
+    height: 40px;
+    margin: 30rpx auto;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    color: #000;
+    font-size: 33rpx;
+}
