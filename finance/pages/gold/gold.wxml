@@ -1,0 +1,24 @@
+<!--pages/gold/gold.wxml-->
+<!--pages/stock/stock.wxml-->
+<cu-custom bgColor="bg-white">
+	<view slot="content" style="color:black;">黄黄黄</view>
+</cu-custom>
+
+<view class="cu-bar bg-white solid-bottom margin-top">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text>
+    <text class="text-black">黄金</text>
+  </view>
+</view>
+
+<view class="cu-list menu sm-border margin-bottom">
+	<view class="cu-item arrow" wx:for="{{list}}" wx:key="index" wx:if="{{item[3]!='--'}}" data-item="{{item}}" bindtap="goDetail">
+		<view class="content">
+			<text class="text-grey">{{ dic[item[0]] }}</text>
+			<text class="text-black">{{ item[3] }}</text>
+		</view>
+		<view class="action">
+			<view class="cu-tag light radius {{ item[18]>0 ? 'bg-red' : 'bg-green' }}">{{ item[17] }}</view>
+		</view>
+	</view>
+</view>

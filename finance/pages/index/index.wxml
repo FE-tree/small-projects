@@ -1,0 +1,65 @@
+<!--index.wxml-->
+
+<cu-custom bgColor="bg-white">
+  <view slot="content" style="color:black;">咕咕咕</view>
+</cu-custom>
+
+<!-- <view class="cu-bar bg-white search">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="请输入关键词" confirm-type="search" bindinput="searchInput"></input>
+  </view>
+  <view style="padding: 0 20rpx 0 0;" bindtap="_searchAction">查询</view>
+</view> -->
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange'></text>
+    <text class="text-black">{{ week }}</text>
+    <text class="text-grey">{{ time }}</text>
+  </view>
+</view>
+
+<view class="card-list">
+  <view class="list-item" wx:for="{{zhishu}}" wx:key="index" data-item="{{item}}" bindtap="goDetail">
+    <view class="card shadow {{ item.pricechange>=0 ? 'red' : 'green' }}">
+      <view class="name">{{ item.name }}</view>
+      <view class="nowpri">{{ item.trade }}</view>
+      <view>
+        <view class="cu-tag light radius {{ item.pricechange>0 ? 'bg-red':'bg-green' }}">{{ item.pricechange }}</view>
+        <view class="cu-tag light radius {{ item.changepercent>0 ? 'bg-red':'bg-green' }}">{{ item.changepercent + '%' }}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="cu-bar bg-white solid-bottom">
+  <view class='action'>
+    <text class='cuIcon-titles text-orange'></text>
+    <text class="text-black">股市排行</text> 
+  </view>
+</view>
+
+<view class="tabs">
+  <view class="tab {{tabCur==index ? 'action':''}}" wx:for="{{tabs}}" wx:key="index" data-index="{{index}}" data-sort="{{item.sort}}" data-asc="{{item.asc}}" bindtap="changeTab">{{ item.label }}</view>
+</view>
+
+<view class="cu-list menu card-menu margin-bottom-xl shadow-lg rank">
+  <view class="cu-item" style="padding-right: 90rpx;">
+    <view class="content">
+      <text class="text-block">股票名</text>
+      <text class="text-block">最新价</text>
+      <text class="text-block">涨跌幅</text>
+    </view>
+  </view>
+  <view class="cu-item arrow" wx:for="{{list}}" wx:key="index" data-item="{{item}}" bindtap="goDetail">
+    <view class="content">
+      <!-- <text class="cuIcon-github text-grey"></text> -->
+      <text class="text-grey">{{index +1}}. {{item.name}}</text>
+      <text class="text-grey">{{item.trade}}</text>
+      <text class="text-grey">{{item.changepercent}}%</text>
+    </view>
+  </view>
+</view>
+
+

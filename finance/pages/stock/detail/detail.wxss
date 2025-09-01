@@ -1,0 +1,43 @@
+/* pages/detail/detail.wxss */
+
+.main {
+  width: 100%;
+}
+.cu-bar .code {
+  position: absolute;
+  right: 30rpx;
+}
+.cu-tag.xm {
+  font-size: 30rpx;
+  padding: 0 20rpx;
+  height: 56rpx;
+}
+.cu-tag.xm .up {
+  transform: rotate(180deg);
+}
+
+.tags {
+  padding: 30rpx;
+}
+.tag-group .cu-capsule {
+  margin-bottom: 30rpx;
+}
+
+.tags .new {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+.tags .flex .cu-capsule {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+}
+.tags .flex .cu-capsule .cu-tag {
+  /* width: 160rpx; */
+}
+
+.cu-item .image {
+  padding: 30rpx 0;
+  text-align: center;
+}

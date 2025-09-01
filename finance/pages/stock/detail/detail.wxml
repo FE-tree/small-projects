@@ -1,0 +1,86 @@
+<!--pages/detail/detail.wxml-->
+<cu-custom bgColor="bg-white" isBack="{{true}}">
+	<view slot="content" style="color:black;">个股行情</view>
+</cu-custom>
+
+<view class="main">
+	<view class="cu-card">
+		<view class="cu-item shadow">
+			<view class="cu-bar bg-white solid-bottom">
+				<view class="action sub-title">
+					<text class="text-xl text-bold text-blue">{{ info.name }}</text>
+					<text class="bg-blue"></text>
+				</view>
+				<text class="text-blue code">股票代码：{{ info.code }}</text>
+			</view>
+			<view class="tags">
+				<view class="tag-group">
+					<view class="cu-capsule new">
+						<view class="cu-tag bg-{{color}} xm">最新价</view>
+						<view class="cu-tag line-{{color}} xm">
+							{{ info.trade }}
+							<text class="cuIcon-refresharrow lg text-{{color}} {{info.pricechange>0 ? 'up' : ''}}"></text>
+						</view>
+					</view>
+				</view>
+				<view class="tag-group flex">
+					<view class="cu-capsule">
+						<view class="cu-tag bg-{{color}} light">涨跌额</view>
+						<view class="cu-tag line-{{color}}">{{ info.pricechange }}</view>
+					</view>
+					<view class="cu-capsule">
+						<view class="cu-tag bg-{{color}} light">涨跌幅</view>
+						<view class="cu-tag line-{{color}}">{{ info.changepercent }}%</view>
+					</view>
+				</view>
+				<view class="tag-group flex">
+					<view class="cu-capsule">
+						<view class="cu-tag bg-blue light">今开盘</view>
+						<view class="cu-tag line-blue">{{ info.open }}</view>
+					</view>
+					<view class="cu-capsule">
+						<view class="cu-tag bg-blue light">昨收盘</view>
+						<view class="cu-tag line-blue">{{ info.settlement }}</view>
+					</view>
+				</view>
+				<view class="tag-group flex">
+					<view class="cu-capsule">
+						<view class="cu-tag bg-blue light">最高价</view>
+						<view class="cu-tag line-blue">{{ info.high }}</view>
+					</view>
+					<view class="cu-capsule">
+						<view class="cu-tag bg-blue light">最低价</view>
+						<view class="cu-tag line-blue">{{ info.low }}</view>
+					</view>
+				</view>
+				<view class="tag-group flex">
+					<view class="cu-capsule">
+						<view class="cu-tag bg-blue light">成交量</view>
+						<view class="cu-tag line-blue">{{ info.volume }}</view>
+					</view>
+					<view class="cu-capsule">
+						<view class="cu-tag bg-blue light">成交额</view>
+						<view class="cu-tag line-blue">{{ info.amount }}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="cu-item shadow" wx:if="{{type!='gold'}}">
+			<scroll-view scroll-x class="bg-white nav">
+				<view class="flex text-center">
+					<view class="cu-item flex-sub {{index==tabCur ? 'text-blue' : ''}}" wx:for="{{nav}}" wx:key="index" bindtap="tabSelect" data-index="{{index}}">
+						{{ item }}
+					</view>
+				</view>
+			</scroll-view>
+			<view class="image" bindtap="tabImage">
+				<image src="http://image.sinajs.cn/newchart/min/n/{{info.symbol}}.gif" wx:if="{{tabCur==0}}"></image>
+				<image src="http://image.sinajs.cn/newchart/daily/n/{{info.symbol}}.gif" wx:if="{{tabCur==1}}"></image>
+				<image src="http://image.sinajs.cn/newchart/weekly/n/{{info.symbol}}.gif" wx:if="{{tabCur==2}}"></image>
+				<image src="http://image.sinajs.cn/newchart/monthly/n/{{info.symbol}}.gif" wx:if="{{tabCur==3}}"></image>
+			</view>
+		</view>
+	</view>
+</view>
+

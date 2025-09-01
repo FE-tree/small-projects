@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/stock/stock",
+    "pages/stock/detail/detail",
+    "pages/gold/gold",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#1296db",
+    "backgroundColor": "#fbfbfd",
+    "position": "bottom",
+    "list": [
+      {
+        "iconPath": "images/tab/date.png",
+        "selectedIconPath": "images/tab/date-sl.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/tab/date.png",
+        "selectedIconPath": "images/tab/date-sl.png",
+        "pagePath": "pages/stock/stock",
+        "text": "股票"
+      },
+      {
+        "iconPath": "images/tab/date.png",
+        "selectedIconPath": "images/tab/date-sl.png",
+        "pagePath": "pages/gold/gold",
+        "text": "黄金"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,33 @@
+<!--pages/stock/stock.wxml-->
+<cu-custom bgColor="bg-white">
+	<view slot="content" style="color:black;">牛牛牛</view>
+</cu-custom>
+
+<scroll-view scroll-x class="bg-white nav fixed" style="top:{{CustomBar}}px">
+	<view class="flex text-center">
+		<view class="cu-item flex-sub {{index==tabCur?' text-orange cur':''}}" wx:for="{{nav}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}" data-node="{{item.node}}">
+			{{ item.label }}
+		</view>
+	</view>
+</scroll-view>
+
+<view class="cu-bar bg-white solid-bottom margin-top" style="margin-top:{{CustomBar}}px">
+  <view class="action">
+    <text class="cuIcon-titles text-orange"></text>
+    <text class="text-black">{{ nav[tabCur].label }}</text>
+    <text class="text-grey">{{ list[0].ticktime }}</text>
+  </view>
+</view>
+
+<view class="cu-list menu sm-border margin-bottom">
+	<view class="cu-item arrow" wx:for="{{list}}" wx:key="index" data-type="{{nav[tabCur].label}}" data-item="{{item}}" bindtap="goDetail">
+		<view class="content">
+			<text class="text-grey">{{ item.name }}</text>
+			<text class="text-black">{{ item.trade }}</text>
+		</view>
+		<view class="action">
+			<view class="cu-tag light radius {{ item.pricechange>0 ? 'bg-red':'bg-green' }}">{{ item.pricechange }}</view>
+			<view class="cu-tag light radius {{ item.changepercent>0 ? 'bg-red':'bg-green' }}">{{ item.changepercent + '%' }}</view>
+		</view>
+	</view>
+</view>

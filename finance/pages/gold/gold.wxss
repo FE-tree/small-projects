@@ -1,0 +1,14 @@
+/* pages/gold/gold.wxss */
+
+.cu-bar .action .text-grey {
+  position: absolute;
+  right: 30rpx;
+}
+
+.cu-list .content {
+  display: flex;
+}
+
+.cu-list .content text {
+  flex: 1;
+}

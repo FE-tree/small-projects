@@ -1,0 +1,14 @@
+/* pages/stock/stock.wxss */
+
+.cu-bar .action .text-grey {
+  position: absolute;
+  right: 30rpx;
+}
+
+.cu-list .content .text-grey {
+  display: inline-block;
+  min-width: 180rpx;
+}
+.cu-list .content .text-black {
+  padding-left: 10rpx;
+}
